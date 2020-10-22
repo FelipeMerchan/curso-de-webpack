@@ -36,7 +36,8 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HTMLWebpackPlugin({
-      title: 'Webpack Dev Server'
+      title: 'React',
+      template: path.resolve(__dirname, 'index.html')
     }),
   ]
 }
