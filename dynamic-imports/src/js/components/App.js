@@ -13,7 +13,7 @@ function App() {
   async function handleClick() {
     setLoaderList(data.loaders)
     const { alerta } = await import('./alert.js')
-    alert('Este módulo ha cargado dinámicamente.')
+    alerta('Este módulo ha cargado dinámicamente.')
   }
 
   return (
