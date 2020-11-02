@@ -1,5 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
+const TerserJSPlugin = require('terser-webpack-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -9,9 +11,15 @@ module.exports = {
       'react-router-dom'
     ]
   },
+  optimization: {
+    minimizer: [
+      new TerserJSPlugin(),
+      new OptimizeCSSAssetsPlugin()
+    ]
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/[name].js',
+    filename: 'js/[name].[hash].dll.js',
     library: '[name]',
   },
   plugins: [
